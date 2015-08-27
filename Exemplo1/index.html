@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style type="text/css">
+#img-canvas
+{
+border:2px solid #000000;
+}
+</style>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/fabric.js/dist/fabric.js"></script>
+
+<script language="javascript" type="text/javascript">
+var canvas;
+
+$(document).ready(function() {
+	
+	canvas 		= new fabric.Canvas('img-canvas');
+	
+	canvas.setBackgroundImage('img/1.png', canvas.renderAll.bind(canvas), {
+	originX: 	'left',
+	originY: 	'top',
+	left: 		0,
+	top: 		0
+	});
+
+
+});
+function AlteraFundo(Imagem)
+{
+	
+	canvas.setBackgroundImage(Imagem, canvas.renderAll.bind(canvas), {
+	originX: 	'left',
+	originY: 	'top',
+	left: 		0,
+	top: 		0
+	});
+	
+}
+</script>
+
+</head>
+<body>
+
+<canvas id="img-canvas" width="450" height="450"></canvas>
+
+<br>
+<br>
+
+<input type="button" value="Imagem - 1" onClick="AlteraFundo('img/1.png');">
+<input type="button" value="Imagem - 2" onClick="AlteraFundo('img/2.png');">
+<input type="button" value="Imagem - 3" onClick="AlteraFundo('img/3.png');">
+<input type="button" value="Imagem - 4" onClick="AlteraFundo('img/4.png');">
+
+</body>
+</html>
